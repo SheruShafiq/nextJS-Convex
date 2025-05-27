@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.0",
     "@mui/material": "^7.1.0",
+    "@vercel/speed-insights": "^1.2.0",
     "convex": "^1.24.1",
     "next": "15.3.2",
     "notistack": "^3.0.2",
