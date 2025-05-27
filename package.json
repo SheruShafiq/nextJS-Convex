@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@convex-dev/eslint-plugin": "^0.0.1-alpha.4",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.0",
     "@mui/material": "^7.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@vercel/speed-insights": "^1.2.0",
     "convex": "^1.24.1",
     "next": "15.3.2",
