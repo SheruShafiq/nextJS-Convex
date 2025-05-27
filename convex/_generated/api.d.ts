@@ -15,7 +15,6 @@ import type {
 } from "convex/server";
 import type * as comments from "../comments.js";
 import type * as posts from "../posts.js";
-import type * as subreddits from "../subreddits.js";
 import type * as users from "../users.js";
 import type * as votes from "../votes.js";
 
@@ -30,7 +29,6 @@ import type * as votes from "../votes.js";
 declare const fullApi: ApiFromModules<{
   comments: typeof comments;
   posts: typeof posts;
-  subreddits: typeof subreddits;
   users: typeof users;
   votes: typeof votes;
 }>;
