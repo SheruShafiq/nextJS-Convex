@@ -2,10 +2,10 @@
 
 import { useRef, useEffect } from 'react';
 
-function Page() {
-  const tmdb_id = "tt0182576"; // Replace with actual TMDB ID
-  const season_number = "1"; // Replace with actual season number
-  const episode_number = "1"; // Replace with actual episode number
+// function Page() {
+//   const tmdb_id = "tt0182576"; // Replace with actual TMDB ID
+//   const season_number = "1"; // Replace with actual season number
+//   const episode_number = "1"; // Replace with actual episode number
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // include mute=0 and allow autoplay
