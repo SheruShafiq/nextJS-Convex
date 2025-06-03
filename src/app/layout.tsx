@@ -31,6 +31,8 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 export const metadata: Metadata = {
+  manifest: "/manifest.webmanifest",
+  themeColor: "#000000",
   title: "Sheru's App Library",
   description: "A collection of apps by Sheru",
   openGraph: {
