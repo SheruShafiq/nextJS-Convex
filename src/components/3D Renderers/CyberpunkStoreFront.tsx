@@ -1,7 +1,6 @@
 
 import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import Button3D from "../3D Objects/Button";
 import {
   OrbitControls,
   Stage,
@@ -11,10 +10,6 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
-import { Root } from "@react-three/uikit/dist/root";
-import { Text } from "@react-three/uikit/dist/Text";
-import { Content } from "@react-three/uikit/dist/content";
-import { Container } from "@react-three/uikit/dist/container";
 
 type CyberpunkStoreFrontProps = { url?: string };
 function Model({ url = "/3dModels/neonBG.glb" }: CyberpunkStoreFrontProps) {

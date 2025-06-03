@@ -4,6 +4,7 @@ import React from "react";
 import "@/styles/globals.css";
 import Providers from "./providers";
 import Script from "next/script";
+import type { Viewport } from 'next'
 
 const SacramentoFont = Sacramento({
   weight: "400",
@@ -20,8 +21,16 @@ const OrbitronFont = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
 });
+export const viewport: Viewport = {
+  themeColor: 'black',
+  width: 'device-width',
+  height: 'device-height',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 export const metadata: Metadata = {
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   title: "Sheru's App Library",
   description: "A collection of apps by Sheru",
   openGraph: {

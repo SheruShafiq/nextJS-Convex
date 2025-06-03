@@ -8,6 +8,8 @@ const CyberpunkStoreFront = lazy(
 );
 import { Loader } from "@react-three/drei";
 import IOSLoader from "@/components/IOSLoader";
+import dynamic from "next/dynamic";
+
 
 function Home() {
   const [ready, setReady] = useState(false);
@@ -138,4 +140,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
