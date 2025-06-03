@@ -1,4 +1,5 @@
 
+'use client';
 import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
