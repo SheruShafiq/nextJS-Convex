@@ -255,3 +255,12 @@ I want to be able to host all sorts of apps here: my own CV with a GIF for a pfp
 ---
 
 #### Yes. Sauce is inspired by the *six‑digit sauce*.
+
+## PWA Testing
+To build the production version with the service worker and test locally:
+
+```bash
+npm run build && npm start
+```
+
+After the server starts, open the site in your browser and ensure the service worker registers (check DevTools > Application > Service Workers).

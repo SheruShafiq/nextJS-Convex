@@ -16,6 +16,8 @@
     "@mui/material": "^7.1.0",
     "@react-three/drei": "^10.1.2",
     "@react-three/postprocessing": "^3.0.4",
+    "@serwist/next": "^9.0.14",
+    "@serwist/precaching": "^9.0.14",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@vercel/speed-insights": "^1.2.0",
     "convex": "^1.24.1",
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "serwist": "^9.0.14",
     "typescript": "^5"
   }
 }
