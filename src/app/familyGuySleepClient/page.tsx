@@ -3,13 +3,13 @@
 import { useRef, useEffect } from 'react';
 
 function Page() {
-  // const tmdb_id = "tt0182576"; // Replace with actual TMDB ID
-  // const season_number = "1"; // Replace with actual season number
-  // const episode_number = "1"; // Replace with actual episode number
+  const tmdb_id = "tt0182576"; // Replace with actual TMDB ID
+  const season_number = "1"; // Replace with actual season number
+  const episode_number = "1"; // Replace with actual episode number
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // include mute=0 and allow autoplay
-  const src = `https://vidlink.pro/tv/94605/2/1?primaryColor=63b8bc&secondaryColor=a2a2a2&iconColor=eefdec&icons=default&player=default&title=true&poster=true&autoplay=true&nextbutton=false`;
+  const src = `https://vidsrc.xyz/embed/tv/${tmdb_id}/${season_number}-${episode_number}?autoplay=1&autonext=1&mute=0`;
 
   useEffect(() => {
     // disable window.open entirely
@@ -40,6 +40,7 @@ function Page() {
 
   return (
     <div>
+      <h1>Family Guy Sleep Client</h1>
       <iframe
         ref={iframeRef}
         src={src}

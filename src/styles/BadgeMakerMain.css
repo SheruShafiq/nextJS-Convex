@@ -1,0 +1,28 @@
+.APP_BadgeMaker * {
+    font-family: 'Roboto Condensed', sans-serif !important;
+
+
+.badgeMakerTitle {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* Fix for the badge export containers */
+.badge-export-container {
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure text in exports is visible */
+.badge-export-container * {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+/* Ensure 2025 text is properly positioned */
+[style*="textShadow"] {
+    text-shadow: 0 0 8px rgb(0, 0, 0), 0 0 16px rgb(0, 0, 0) !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+}

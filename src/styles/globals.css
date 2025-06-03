@@ -1,0 +1,135 @@
+
+:root {
+  --outer-shadow: 0 0 0.1vw 1px #ffffff, 0 0 0.4rem 2px #da4983,
+    0 0 1rem 4px #ff0066;
+  --inner-shadow: inset 0 0 0.1rem 0.4rem #e0f7fa,
+    inset 0 0 0.4rem 0.6rem #00e5ff, inset 0 0 1rem 0.4rem #26c6da;
+  --all-shadow: 0 0 0.1rem 0.1rem #e0f7fa, 0 0 0.2rem 0.15rem #da4983,
+    0 0 0.5rem 0.1rem #ff0066, inset 0 0 0.1rem 0.1rem #e0f7fa,
+    inset 0 0 0.2rem 0.15rem #da4983, inset 0 0 0.5rem 0.1rem #ff0066;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace !important;
+  background-color: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255) !important;
+}
+* {
+  font-family: monospace !important;
+}
+
+.orbitron {
+  font-family: "Orbitron", sans-serif !important;
+  /* Ensure Orbitron is applied */
+  font-weight: 400;
+  font-style: normal;
+}
+/* =======================================
+   Base: make the scrollbar wide enough for a thick thumb
+   ======================================= */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 16px;
+}
+
+/* =======================================
+   Track: draw only a 1px line at the center
+   ======================================= */
+*::-webkit-scrollbar-track {
+  /* transparent base, then a 1px vertical line centered */
+  background: linear-gradient(
+    to right,
+    transparent calc(50% - 0.5px),
+    rgba(255, 0, 106, 0.34) calc(50% - 0.5px),
+    rgba(255, 0, 106, 0.34) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+}
+.homePageTitleDrop {
+  font-size: 10vw !important;
+}
+/* =======================================
+   Thumb: full 16px wide, rounded, with box-shadow
+   ======================================= */
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(38, 0, 16);
+  border-radius: 8px;
+  /* subtle depth: inner + outer shadow */
+  box-shadow: inset 0 0 2px rgb(255 0 105), 0 0 4px rgb(255 0 105);
+}
+
+/* Hover state for the thumb */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255 0 105);
+}
+
+.standardBorder {
+  border: 1px solid rgba(211, 211, 211, 0.46);
+  border-radius: 6px;
+}
+/* .userProfileAvatarGIF {
+  box-shadow: var(--outer-shadow);
+} */
+.MuiAlert-action {
+  padding-top: 0px !important;
+}
+.PC_SignupAndLogin_LoginMessage,
+.PC_SignupAndLogin_SignupMessage {
+  width: 400px;
+}
+
+.postPageCommentsTitle {
+  font-size: 1.4rem;
+}
+.HeaderLogo {
+  text-align: center;
+  font-weight: 400;
+}
+.HeaderLogo:hover {
+  cursor: pointer;
+}
+.userProfilePageUserStats {
+  margin-right: 4px;
+}
+.userProfilePageUserName {
+  font-size: 6rem;
+  font-weight: bold;
+}
+.HeaderLogo {
+  font-family: "Sacramento", sans-serif !important;
+  font-size: 3.2rem;
+  text-shadow: 0 0 10px #fff, 0 0 60px #fff, 0 0 3px #fff, 0 0 14px #ff0066,
+    0 0 16px #ff0066, 0 0 40px #ff0066, 0 0 26px #ff0066, 0 0 24px #ff0066;
+}
+
+.loginButtonText,
+.createPostButton {
+  font-weight: bolder;
+}
+
+.loggedInUserName {
+  display: block;
+  font-weight: bold;
+}
+.neonBorder {
+  box-shadow: var(--all-shadow);
+  border-radius: 13px;
+}
+.secondaryButtonHoverStyles:hover {
+  background-color: rgb(194 82 128 / 15%);
+}
+.footerDevDesc {
+  font-size: 9px;
+}
+.footerDevName:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .loggedInUserName {
+    display: none;
+  }
+}

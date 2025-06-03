@@ -1,0 +1,71 @@
+.spinner {
+  position: relative;
+  display: inline-block;
+  /* The container size is controlled via inline style (size prop) */
+}
+.spinner.light {
+  color: #69717d; /* medium gray for light mode */
+}
+.spinner.dark {
+  color: #ffffffcd; /* white for dark mode */
+}
+
+.spinner .segment {
+  position: absolute;
+  bottom: 2px;
+  left: 46.29%;
+  width: 7.4%;
+  height: 27.77%;
+  background-color: currentColor;
+  border-radius: 1px;
+  opacity: 0;
+  transform-origin: 50% -50%;
+  animation: spinFade 1s linear infinite;
+}
+
+/* Set up nine segments evenly spaced clockwise (41.25deg increments) */
+.spinner .segment:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -0.8889s;
+}
+.spinner .segment:nth-child(2) {
+  transform: rotate(41.25deg);
+  animation-delay: -0.7778s;
+}
+.spinner .segment:nth-child(3) {
+  transform: rotate(82.5deg);
+  animation-delay: -0.6667s;
+}
+.spinner .segment:nth-child(4) {
+  transform: rotate(123.75deg);
+  animation-delay: -0.5556s;
+}
+.spinner .segment:nth-child(5) {
+  transform: rotate(165deg);
+  animation-delay: -0.4444s;
+}
+.spinner .segment:nth-child(6) {
+  transform: rotate(206.25deg);
+  animation-delay: -0.3333s;
+}
+.spinner .segment:nth-child(7) {
+  transform: rotate(247.5deg);
+  animation-delay: -0.2222s;
+}
+.spinner .segment:nth-child(8) {
+  transform: rotate(288.75deg);
+  animation-delay: -0.1111s;
+}
+.spinner .segment:nth-child(9) {
+  transform: rotate(330deg);
+  animation-delay: -0s;
+}
+
+@keyframes spinFade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
