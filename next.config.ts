@@ -1,12 +1,18 @@
-import type { NextConfig } from "next";
-import { withSerwist } from "@serwist/next";
+// next.config.mjs
+import withSerwistInit from '@serwist/next'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const withSerwist = withSerwistInit({
+  swSrc: 'app/sw.ts',    // your TypeScript worker (optional)
+  swDest: 'public/sw.js',
+})
 
-export default withSerwist(nextConfig, {
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === "development",
-});
+export default withSerwist({
+  // the rest of your Next config
+  turbopack: {
+    resolveAlias: {
+      '@components': './src/components',
+    },
+    resolveExtensions: ['.ts', '.tsx', '.js', '.jsx'],
+    moduleIds: process.env.NODE_ENV === 'production' ? 'deterministic' : 'named',
+  },
+})

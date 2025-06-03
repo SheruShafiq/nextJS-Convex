@@ -5,6 +5,8 @@ import "@/styles/globals.css";
 import Providers from "./providers";
 import Script from "next/script";
 import type { Viewport } from 'next'
+import { useServiceWorker } from '@/hooks/useServiceWorker'
+
 
 const SacramentoFont = Sacramento({
   weight: "400",
@@ -32,7 +34,6 @@ export const viewport: Viewport = {
 }
 export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
-  themeColor: "#000000",
   title: "Sheru's App Library",
   description: "A collection of apps by Sheru",
   openGraph: {
@@ -56,6 +57,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+   useServiceWorker();
   return (
     <html lang="en">
       <body className={`${SacramentoFont.variable} ${OpenSansFont.variable} ${OrbitronFont.variable}`}>
