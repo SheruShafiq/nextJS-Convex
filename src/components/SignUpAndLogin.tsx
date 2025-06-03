@@ -7,6 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
+import Image from "next/image";
 // import { loginUser, createUser } from "../APICalls";
 import { useGlitch } from "react-powerglitch";
 import { TextGlitchEffect } from "@/components/TextGlitchEffect";
@@ -21,7 +22,7 @@ export type SignupProps = {
   setOpen: (open: boolean) => void;
   setIsLoggedIn: (isLoggedIn: boolean) => void;
   setUserID: (userID: string) => void;
-  setUserData: (userData: any) => void; //TODO: Replace with user type
+  setUserData: (userData: unknown) => void; //TODO: Replace with user type
 }
 
 
@@ -65,10 +66,9 @@ function SignUpAndLogin({
       //     setUserID(user.id);
       //     setUserData(user);
       //     setIsLoggedIn(true);
-      //     handleClose();
-      //     setCreatingOrLoggingIn(false);
+      //     handleClose();      //     setCreatingOrLoggingIn(false);
       //   },
-      //   onError: (error: any) => {
+      //   onError: (error: unknown) => {
       //     const err: errorProps = {
       //       id: "user login error",
       //       userFriendlyMessage: "Either username or password is incorrect.",
@@ -94,10 +94,9 @@ function SignUpAndLogin({
       //     setUserID(user.id);
       //     setIsLoggedIn(true);
       //     document.cookie = `userID=${user.id}; path=/;`;
-      //     setOpen(false);
-      //     setCreatingOrLoggingIn(false);
+      //     setOpen(false);      //     setCreatingOrLoggingIn(false);
       //   },
-      //   onError: (error: any) => {
+      //   onError: (error: unknown) => {
       //     const err: errorProps = {
       //       id: "creating user error",
       //       userFriendlyMessage:
@@ -144,15 +143,14 @@ function SignUpAndLogin({
               alignItems: "center",
             }}
             ref={glitch?.ref}
-          >
-            {mode === "login" ? (
+          >            {mode === "login" ? (
               <>
-                <img
+                <Image
                   src="/noBitches.png"
                   alt="emoji"
+                  width={40}
+                  height={40}
                   style={{
-                    width: "40px",
-                    height: "40px",
                     marginRight: "2px",
                   }}
                 />

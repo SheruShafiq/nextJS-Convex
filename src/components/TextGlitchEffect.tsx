@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 const LETTERS = "abcdefghijklmnopqrstuvwxyz";
 const SPECIAL_CHARS = "~`!@#$%^&*()-+=/*[]{}:<>?";
@@ -25,11 +25,10 @@ export const TextGlitchEffect: React.FC<GlitchEffectProps> = ({
   letterCase = "uppercase",
   className,
   type = "ALPHA_NUMERIC",
-}) => {
-  const intervalRef = useRef<number | null>(null);
+}) => {  const intervalRef = useRef<number | null>(null);
   const textElementRef = useRef<HTMLDivElement | null>(null);
 
-  const startGlitchEffect = (event: { target: HTMLDivElement }) => {
+  const startGlitchEffect = useCallback((event: { target: HTMLDivElement }) => {
     let iteration = 0;
 
     if (intervalRef.current) {
@@ -74,11 +73,17 @@ export const TextGlitchEffect: React.FC<GlitchEffectProps> = ({
 
       if (iteration >= (event.target.dataset.value?.length ?? 0)) {
         clearInterval(intervalRef.current!);
-      }
-
-      iteration += 1 / 3;
+      }      iteration += 1 / 3;
     }, speed);
-  };
+  }, [speed, letterCase, type]);
+
+  useEffect(() => {
+    if (textElementRef.current) {
+      startGlitchEffect({ target: textElementRef.current });
+    }    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [text, startGlitchEffect]);
 
   useEffect(() => {
     if (textElementRef.current) {
@@ -87,16 +92,7 @@ export const TextGlitchEffect: React.FC<GlitchEffectProps> = ({
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [text]);
-
-  useEffect(() => {
-    if (textElementRef.current) {
-      startGlitchEffect({ target: textElementRef.current });
-    }
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, []);
+  }, [startGlitchEffect]);
 
   return (
     <div

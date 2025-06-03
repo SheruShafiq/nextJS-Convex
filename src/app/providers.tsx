@@ -84,9 +84,8 @@ export default function Providers({
   children: React.ReactNode;
 }) {
   const [loginDialogue, setLogInDialogue] = useState(false);
-  const notistackRef = createRef<SnackbarProvider>();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userData, setUserData] = useState();
+  const notistackRef = createRef<SnackbarProvider>();  const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userData, setUserData] = useState<unknown>();
   const [userID, setUserID] = useState<string | undefined>(undefined);
 
   React.useEffect(() => {

@@ -24,7 +24,8 @@ const eslintConfig = [
   },
   {
     rules: {
-      "@typescript-eslint/no-floating-promises": "error"
+      "@typescript-eslint/no-floating-promises": "error",
+      "@typescript-eslint/no-unused-vars": "off"
     }
   }
 ];

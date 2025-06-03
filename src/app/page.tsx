@@ -11,17 +11,21 @@ import IOSLoader from "@/components/IOSLoader";
 
 function Home() {
   const [ready, setReady] = useState(false);
-  const [shouldDisplay, setShouldDisplay] = useState(false);
-  useEffect(() => {
-    const handle = (window as any).requestIdleCallback
-      ? (window as any).requestIdleCallback(() => setReady(true))
+  const [shouldDisplay, setShouldDisplay] = useState(false);  useEffect(() => {
+    const windowWithIdleCallback = window as Window & {
+      requestIdleCallback?: (callback: () => void) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+    
+    const handle = windowWithIdleCallback.requestIdleCallback
+      ? windowWithIdleCallback.requestIdleCallback(() => setReady(true))
       : window.setTimeout(() => setReady(true), 200);
     const timer = setTimeout(() => {
       setShouldDisplay(true);
     }, 2000);
     return () => {
-      if ((window as any).cancelIdleCallback) {
-        (window as any).cancelIdleCallback(handle);
+      if (windowWithIdleCallback.cancelIdleCallback) {
+        windowWithIdleCallback.cancelIdleCallback(handle);
       } else {
         clearTimeout(handle as number);
         clearTimeout(timer);

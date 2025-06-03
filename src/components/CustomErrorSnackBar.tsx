@@ -161,4 +161,6 @@ const CustomErrorSnackBar = forwardRef<HTMLDivElement, errorProps>(
   }
 );
 
+CustomErrorSnackBar.displayName = 'CustomErrorSnackBar';
+
 export default CustomErrorSnackBar;
