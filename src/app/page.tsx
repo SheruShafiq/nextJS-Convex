@@ -107,7 +107,7 @@ function Home() {
           <Button
             size="large"
             variant="outlined"
-            onClick={() => router.push("/sheru/appLibrary/badgeMaker")}
+            onClick={() => router.push("/badgeMaker")}
           >
             Badge Maker{" "}
           </Button>

@@ -146,6 +146,8 @@ function SignUpAndLogin({
           >            {mode === "login" ? (
               <>
                 <Image
+width={100}
+height={100}
                   src="/noBitches.png"
                   alt="emoji"
                   width={40}
